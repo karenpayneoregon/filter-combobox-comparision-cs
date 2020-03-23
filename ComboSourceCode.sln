@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF Core", "EF Core", "{72ACFED2-3F9A-48E0-8E3C-8F625CFF3D44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend Core class projects", "Backend Core class projects", "{2BBA8A98-C941-4C16-AC01-1A5FB6298109}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend Core projects", "Frontend Core projects", "{1AC4B71B-5047-4DBA-A447-2F24EF03278C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWindEntityCore", "NorthWindEntityCore\NorthWindEntityCore.csproj", "{566686AC-3CFF-4FC6-830E-A2AB960E2D57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreDualComboBoxes", "CoreDualComboBoxes\CoreDualComboBoxes.csproj", "{529E9D18-198F-44B6-9885-CA90441AA548}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Conventional", "Conventional", "{CDC17B1D-6DB8-44F1-BF9D-83961C6C8A99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboBoxToComboBoxSqlServer", "ComboBoxToComboBoxSqlServer\ComboBoxToComboBoxSqlServer.csproj", "{DB567E52-23E3-4F98-8BBD-B5BA8D6E2ED4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{72778AF1-8E37-4D4A-8EE3-7D75BA594B23}"
+	ProjectSection(SolutionItems) = preProject
+		NorthWindScript.sql = NorthWindScript.sql
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{566686AC-3CFF-4FC6-830E-A2AB960E2D57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{566686AC-3CFF-4FC6-830E-A2AB960E2D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{566686AC-3CFF-4FC6-830E-A2AB960E2D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{566686AC-3CFF-4FC6-830E-A2AB960E2D57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{529E9D18-198F-44B6-9885-CA90441AA548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{529E9D18-198F-44B6-9885-CA90441AA548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{529E9D18-198F-44B6-9885-CA90441AA548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{529E9D18-198F-44B6-9885-CA90441AA548}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB567E52-23E3-4F98-8BBD-B5BA8D6E2ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB567E52-23E3-4F98-8BBD-B5BA8D6E2ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB567E52-23E3-4F98-8BBD-B5BA8D6E2ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB567E52-23E3-4F98-8BBD-B5BA8D6E2ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2BBA8A98-C941-4C16-AC01-1A5FB6298109} = {72ACFED2-3F9A-48E0-8E3C-8F625CFF3D44}
+		{1AC4B71B-5047-4DBA-A447-2F24EF03278C} = {72ACFED2-3F9A-48E0-8E3C-8F625CFF3D44}
+		{566686AC-3CFF-4FC6-830E-A2AB960E2D57} = {2BBA8A98-C941-4C16-AC01-1A5FB6298109}
+		{529E9D18-198F-44B6-9885-CA90441AA548} = {1AC4B71B-5047-4DBA-A447-2F24EF03278C}
+		{DB567E52-23E3-4F98-8BBD-B5BA8D6E2ED4} = {CDC17B1D-6DB8-44F1-BF9D-83961C6C8A99}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {368189E6-4306-44B2-8FE5-D1D0CC236715}
+	EndGlobalSection
+EndGlobal
