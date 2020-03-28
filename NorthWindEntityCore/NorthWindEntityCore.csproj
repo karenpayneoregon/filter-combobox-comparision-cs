@@ -124,6 +124,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CategoryItem.cs" />
+    <Compile Include="Classes\LoadReferenceData.cs" />
     <Compile Include="Contexts\NorthContext.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Contact.cs" />

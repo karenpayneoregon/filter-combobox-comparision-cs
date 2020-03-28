@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
+using NorthWindEntityCore.Classes;
 using NorthWindEntityCore.Contexts;
 using NorthWindEntityCore.Models;
 
@@ -32,12 +34,13 @@ namespace CoreDualComboBoxes
 
         private void Form1_Shown(object sender, EventArgs e)
         {
+            var test = LoadReferenceData.Categories();
             /*
              * Get all categories, inform the DbContext not to track
              * changes as this is purely for show not add, edit, delete
              * operations
              */
-            var categories = _context.Categories.AsNoTracking()
+            List<Category> categories = _context.Categories.AsNoTracking()
                 .OrderBy(cat => cat.CategoryName).ToList();
 
             CategoryComboBox.DataSource = categories;

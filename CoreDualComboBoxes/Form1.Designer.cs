@@ -103,7 +103,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Filter ComboBox - Entity Framework Core";
+            this.Text = "Filter ComboBox - Entity Framework Core - version 1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
