@@ -28,29 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SelectionTextBox = new System.Windows.Forms.TextBox();
-            this.SelectionButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ProductComboBox = new System.Windows.Forms.ComboBox();
             this.CategoryComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // SelectionTextBox
-            // 
-            this.SelectionTextBox.Location = new System.Drawing.Point(16, 121);
-            this.SelectionTextBox.Name = "SelectionTextBox";
-            this.SelectionTextBox.Size = new System.Drawing.Size(417, 20);
-            this.SelectionTextBox.TabIndex = 11;
-            // 
-            // SelectionButton
-            // 
-            this.SelectionButton.Location = new System.Drawing.Point(13, 92);
-            this.SelectionButton.Name = "SelectionButton";
-            this.SelectionButton.Size = new System.Drawing.Size(87, 23);
-            this.SelectionButton.TabIndex = 10;
-            this.SelectionButton.Text = "Selection";
-            this.SelectionButton.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -93,8 +75,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 162);
-            this.Controls.Add(this.SelectionTextBox);
-            this.Controls.Add(this.SelectionButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ProductComboBox);
@@ -109,9 +89,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox SelectionTextBox;
-        private System.Windows.Forms.Button SelectionButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox ProductComboBox;

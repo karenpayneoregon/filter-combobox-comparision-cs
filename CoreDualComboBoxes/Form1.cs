@@ -24,34 +24,19 @@ namespace CoreDualComboBoxes
 
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+        
             var categoryIdentifier = ((Category)CategoryComboBox.SelectedItem).CategoryId;
-            _productsBindingListFilter = new BindingList<Product>(
-                _productsBindingList.Where(product => product.CategoryId == categoryIdentifier).ToList());
+            _productsBindingListFilter = new BindingList<Product>(_productsBindingList.Where(product => product.CategoryId == categoryIdentifier).ToList());
 
             ProductComboBox.DataSource = _productsBindingListFilter;
         }
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            var test = LoadReferenceData.Categories();
-            /*
-             * Get all categories, inform the DbContext not to track
-             * changes as this is purely for show not add, edit, delete
-             * operations
-             */
             List<Category> categories = _context.Categories.AsNoTracking()
                 .OrderBy(cat => cat.CategoryName).ToList();
 
             CategoryComboBox.DataSource = categories;
-
-
-            /*
-             * Get all products, inform the DbContext not to track
-             * changes as this is purely for show not add, edit, delete
-             * operations, only select via a filter on CategoryComboBox
-             * selection.
-             */
 
             _productsBindingList = new BindingList<Product>(_context.Products.AsNoTracking()
                 .OrderBy(prod => prod.ProductName).ToList());
@@ -63,11 +48,6 @@ namespace CoreDualComboBoxes
             ProductComboBox.DataSource = _productsBindingListFilter;
 
         }
-        /// <summary>
-        /// Show current selections
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void SelectionButton_Click(object sender, EventArgs e)
         {
             var currentCategory = ((Category) CategoryComboBox.SelectedItem);

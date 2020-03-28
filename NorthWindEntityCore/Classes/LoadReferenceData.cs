@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using NorthWindEntityCore.Contexts;
 using NorthWindEntityCore.Models;
 
@@ -15,15 +11,34 @@ namespace NorthWindEntityCore.Classes
         {
             using (var context = new NorthContext()) 
             {
-                return context.Categories.OrderBy(cat => cat.CategoryName).ToList();
+                return context.Categories.OrderBy(category => category.CategoryName).ToList();
             }
         }
+        /// <summary>
+        /// Load only properties to load a ComboBox
+        /// </summary>
+        /// <returns></returns>
+        public static List<CategoryItem> CategoryItems()
+        {
+            using (var context = new NorthContext())
+            {
+                return context.Categories.Select(category => new CategoryItem()
+                {
+                    CategoryId = category.CategoryId,
+                    CategoryName = category.CategoryName
+                }) .OrderBy(category => category.CategoryName).ToList();
+            }
 
+        }
+        /// <summary>
+        /// Load all products
+        /// </summary>
+        /// <returns></returns>
         public static List<Product> Products()
         {
             using (var context = new NorthContext())
             {
-                return context.Products.OrderBy(prod => prod.ProductName).ToList();
+                return context.Products.OrderBy(product => product.ProductName).ToList();
             }
         }
     }
