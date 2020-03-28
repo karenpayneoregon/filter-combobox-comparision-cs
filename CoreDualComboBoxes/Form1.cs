@@ -24,9 +24,11 @@ namespace CoreDualComboBoxes
 
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-        
+
             var categoryIdentifier = ((Category)CategoryComboBox.SelectedItem).CategoryId;
-            _productsBindingListFilter = new BindingList<Product>(_productsBindingList.Where(product => product.CategoryId == categoryIdentifier).ToList());
+
+            _productsBindingListFilter = new BindingList<Product>(
+                _productsBindingList.Where(product => product.CategoryId == categoryIdentifier).ToList());
 
             ProductComboBox.DataSource = _productsBindingListFilter;
         }

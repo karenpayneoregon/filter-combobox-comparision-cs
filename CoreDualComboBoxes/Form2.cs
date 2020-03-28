@@ -36,7 +36,9 @@ namespace CoreDualComboBoxes
         }
         private void SetProductFilter(int categoryIdentifier)
         {
-            _productsBindingListFilter = new BindingList<Product>(_productsBindingList.Where(product => product.CategoryId == categoryIdentifier).ToList());
+            _productsBindingListFilter = new BindingList<Product>(
+                _productsBindingList
+                    .Where(product => product.CategoryId == categoryIdentifier).ToList());
         }
     }
 }

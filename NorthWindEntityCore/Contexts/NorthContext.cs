@@ -32,11 +32,18 @@ namespace NorthWindEntityCore.Contexts
         public virtual DbSet<Shipper> Shippers { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
 
+        /// <summary>
+        /// IMPORTANT: the variable below, serverName needs to be
+        /// the instance name of your database server name.
+        ///
+        /// This needs to also be done in the project,
+        /// ComboBoxToComboBoxServer.DataOperations
+        /// </summary>
+        /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-
                 var serverName = ".\\SQLEXPRESS";
                 if (Environment.UserName.ToLower().Contains("karen"))
                 {

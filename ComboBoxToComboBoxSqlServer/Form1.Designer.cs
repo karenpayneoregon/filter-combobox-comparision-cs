@@ -54,13 +54,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 288);
+            this.ClientSize = new System.Drawing.Size(413, 203);
             this.Controls.Add(this.ProductComboBox);
             this.Controls.Add(this.CategoryComboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "DataTable code sample";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 

@@ -11,13 +11,10 @@ namespace NorthWindEntityCore.Classes
         {
             using (var context = new NorthContext()) 
             {
-                return context.Categories.OrderBy(category => category.CategoryName).ToList();
+                return context.Categories
+                    .OrderBy(category => category.CategoryName).ToList();
             }
         }
-        /// <summary>
-        /// Load only properties to load a ComboBox
-        /// </summary>
-        /// <returns></returns>
         public static List<CategoryItem> CategoryItems()
         {
             using (var context = new NorthContext())
@@ -30,15 +27,12 @@ namespace NorthWindEntityCore.Classes
             }
 
         }
-        /// <summary>
-        /// Load all products
-        /// </summary>
-        /// <returns></returns>
         public static List<Product> Products()
         {
             using (var context = new NorthContext())
             {
-                return context.Products.OrderBy(product => product.ProductName).ToList();
+                return context.Products
+                    .OrderBy(product => product.ProductName).ToList();
             }
         }
     }
