@@ -4,4 +4,6 @@ This article filtering a ComboBox from a parent ComboBox selection done in Entit
 
 Using SQL-Server database
 
-**Microsoft TechNet article** to be announced.
+**Microsoft TechNet article** 
+
+[C# ComboBox to ComboBox cascade filtering DataTable verses Entity Framework Core](https://social.technet.microsoft.com/wiki/contents/articles/53760.c-combobox-to-combobox-cascade-filtering-datatable-verses-entity-framework-core.aspx)
