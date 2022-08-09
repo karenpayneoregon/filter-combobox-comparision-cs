@@ -15,8 +15,11 @@ namespace CoreDualComboBoxes
         public Form2()
         {
             InitializeComponent();
+
             Shown += Form2_Shown;
+
             CategoryComboBox.SelectedIndexChanged += CategoryComboBox_SelectedIndexChanged;
+
         }
 
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -29,6 +32,7 @@ namespace CoreDualComboBoxes
             }
 
             ProductComboBox.DataSource = _productsBindingListFilter;
+
         }
 
         private void Form2_Shown(object sender, EventArgs e)
@@ -37,6 +41,7 @@ namespace CoreDualComboBoxes
             CategoryComboBox.DataSource = categories;
 
             _productsBindingList = new BindingList<Product>(LoadReferenceData.Products());
+            // ReSharper disable once PossibleInvalidOperationException
             SetProductFilter((int)categories.FirstOrDefault()?.CategoryId);
             ProductComboBox.DataSource = _productsBindingListFilter;
         }
