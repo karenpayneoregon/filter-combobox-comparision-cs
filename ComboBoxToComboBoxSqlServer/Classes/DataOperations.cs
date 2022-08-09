@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using BaseConnectionLibrary.ConnectionClasses;
 
 namespace ComboBoxToComboBoxSqlServer.Classes
@@ -42,10 +44,57 @@ namespace ComboBoxToComboBoxSqlServer.Classes
                     cmd.CommandText = selectStatement;
                     cn.Open();
                     dt.Load(cmd.ExecuteReader());
+
+                    var list = CategoriesWithoutProducts();
+                    if (list.Count >0)
+                    {
+                        foreach (var id in list)
+                        {
+                            
+                            var row = dt.AsEnumerable().FirstOrDefault(dr => 
+                                dr.Field<int>("CategoryId") == id);
+
+                            if (row != null) dt.Rows.Remove(row);
+
+                        }
+                        
+                    }
                 }
             }
 
             return dt;
+        }
+
+        /// <summary>
+        /// Get categories without products
+        /// </summary>
+        /// <returns></returns>
+        private List<int> CategoriesWithoutProducts()
+        {
+            List<int> list = new List<int>();
+            using (var cn = new SqlConnection(ConnectionString))
+            {
+                using (var cmd = new SqlCommand() { Connection = cn })
+                {
+                    cmd.CommandText = 
+                        @"SELECT CategoryID 
+                          FROM dbo.Categories 
+                          WHERE CategoryID NOT IN(SELECT CategoryID FROM  dbo.Products) ";
+
+                    cn.Open();
+                    var reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(reader.GetInt32(0));
+                        }
+                    }
+                }
+                
+            }
+
+            return list;
         }
         public DataTable ProductDataTable()
         {

@@ -28,8 +28,10 @@ namespace NorthWindEntityCore.Models
         public short? UnitsInStock { get; set; }
         public short? UnitsOnOrder { get; set; }
         public short? ReorderLevel { get; set; }
-        public bool Discontinued { get; set; }
-        public DateTime? DiscontinuedDate { get; set; }
+
+        //  Karen commented out 8/2022
+        //public bool Discontinued { get; set; }
+        //public DateTime? DiscontinuedDate { get; set; }
 
         [ForeignKey("CategoryId")]
         [InverseProperty("Products")]

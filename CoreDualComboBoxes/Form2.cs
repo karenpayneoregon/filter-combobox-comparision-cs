@@ -22,6 +22,12 @@ namespace CoreDualComboBoxes
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             SetProductFilter(((CategoryItem)CategoryComboBox.SelectedItem).CategoryId);
+
+            if (_productsBindingListFilter.Count == 0)
+            {
+                _productsBindingListFilter.Add(new Product() { ProductName = "None" });
+            }
+
             ProductComboBox.DataSource = _productsBindingListFilter;
         }
 

@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
-using NorthWindEntityCore.Classes;
 using NorthWindEntityCore.Contexts;
 using NorthWindEntityCore.Models;
 
@@ -15,11 +14,15 @@ namespace CoreDualComboBoxes
         private readonly NorthContext _context = new NorthContext();
         private BindingList<Product> _productsBindingList = new BindingList<Product>();
         private BindingList<Product> _productsBindingListFilter = new BindingList<Product>();
+
         public Form1()
         {
             InitializeComponent();
+
             Shown += Form1_Shown;
+
             CategoryComboBox.SelectedIndexChanged += CategoryComboBox_SelectedIndexChanged;
+
         }
 
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,6 +33,16 @@ namespace CoreDualComboBoxes
             _productsBindingListFilter = new BindingList<Product>(
                 _productsBindingList.Where(product => product.CategoryId == categoryIdentifier).ToList());
 
+
+            /*
+             * in the data provider example working with a DataTable we exclude
+             * categories with no products via a secondary query
+             */
+            if (_productsBindingListFilter.Count == 0)
+            {
+                _productsBindingListFilter.Add(new Product() { ProductName = "None" });
+            }
+            
             ProductComboBox.DataSource = _productsBindingListFilter;
         }
 
@@ -58,14 +71,14 @@ namespace CoreDualComboBoxes
             if (currentProduct.UnitPrice != null)
             {
                 SelectionTextBox.Text =
-                    $"Category: {currentCategory.CategoryId},{currentCategory.CategoryName}   " +
-                    $"Product: {currentProduct.ProductId}, {currentProduct.ProductName} at {currentProduct.UnitPrice.Value:C}";
+                    $@"Category: {currentCategory.CategoryId},{currentCategory.CategoryName}   " +
+                    $@"Product: {currentProduct.ProductId}, {currentProduct.ProductName} at {currentProduct.UnitPrice.Value:C}";
             }
             else
             {
                 SelectionTextBox.Text =
-                    $"Category: {currentCategory.CategoryId},{currentCategory.CategoryName}   " +
-                    $"Product: {currentProduct.ProductId}, {currentProduct.ProductName}";
+                    $@"Category: {currentCategory.CategoryId},{currentCategory.CategoryName}   " +
+                    $@"Product: {currentProduct.ProductId}, {currentProduct.ProductName}";
             }
         }
     }
